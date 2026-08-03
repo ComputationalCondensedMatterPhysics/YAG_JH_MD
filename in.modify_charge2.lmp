@@ -1,0 +1,24 @@
+#YAG
+
+#模型的基本参数
+units               metal
+boundary            p p p 
+atom_style          charge
+timestep            0.004
+neighbor            0 bin
+neigh_modify        every 1 delay 0
+#kspace_style        pppm 1.0e-4
+
+#建模
+read_data          cg.data 
+
+
+
+set    type  1 charge  -1.5475
+set    type  2 charge  2.5
+set    type  3 charge  1.7
+set    type  4 charge  2.556
+#et    type  5 charge  2.5
+
+
+write_data          cg.data
